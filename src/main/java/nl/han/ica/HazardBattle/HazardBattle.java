@@ -13,15 +13,15 @@ import nl.han.ica.OOPDProcessingEngineHAN.View.View;
 public class HazardBattle extends GameEngine {
 
 	private IPersistence persistence;
-	private SoldatenSpawner objects;
-	private LevensDrankjeSpawner verrassingen;
+	private ObjectenSpawner objects;
+	private ItemSpawner verrassingen;
 	private Text scoreText, levensText, kogelText;
 	private int soldatenGedood, verrassingsSpawnerteller, levens;
 	public int kogels;
     public int gameHoogte, gameBreedte;
     // bij onderstaand variable kunt u kiezen uit 'paintball geweer', 'automatisch geweer', en 'hand geweer'
-    private int typeWapen = 0; 
-    private Wapens p; 
+    private int typeWapen = 2; 
+    private Wapen p; 
     
 	public static void main(String[] args) {
 		HazardBattle b = new HazardBattle();
@@ -37,7 +37,7 @@ public class HazardBattle extends GameEngine {
 		
     	maakSpeler(); 
     	soldatenSpawner();
-    	levensDrankjeSpawner();
+    	itemSpawner();
     	objectsMap();
 		maakAchtergrond(gameBreedte, gameHoogte); 
 		tekenTextEnDashboard(gameBreedte, gameHoogte);
@@ -139,14 +139,14 @@ public class HazardBattle extends GameEngine {
         tileMap = new TileMap(tileSize, tileTypes, tilesMap);
 	}
 
-	private void levensDrankjeSpawner() {
+	private void itemSpawner() {
 		// TODO Auto-generated method stub
-		verrassingen = new LevensDrankjeSpawner(this, (float) 0.25);
+		verrassingen = new ItemSpawner(this, (float) 0.25);
 	}
 
 	private void soldatenSpawner() {
 		// TODO Auto-generated method stub
-		objects = new SoldatenSpawner(this, (float) 0.5);
+		objects = new ObjectenSpawner(this, (float) 0.5);
 	}
 
 	@Override

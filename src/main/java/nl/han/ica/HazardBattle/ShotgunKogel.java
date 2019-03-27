@@ -7,12 +7,12 @@ import nl.han.ica.OOPDProcessingEngineHAN.Objects.GameObject;
 import nl.han.ica.OOPDProcessingEngineHAN.Objects.Sprite;
 import nl.han.ica.OOPDProcessingEngineHAN.Sound.Sound;
 
-public class ShotgunKogel extends Kogel implements ICollidableWithGameObjects, ISpeelGeluid {
+public class ShotgunKogel extends Kogel implements ICollidableWithGameObjects {
 
 	private HazardBattle world;
 
 	public ShotgunKogel(HazardBattle world) {
-		super(new Sprite("src/main/java/nl/han/ica/HazardBattle/media/Nieuwe map/shotgunBullet.png"));
+		super(new Sprite("src/main/java/nl/han/ica/HazardBattle/media/Nieuwe map/shotgunBullet.png"), world);
 		this.world = world; 
 		setxSpeed(-2f);
 		// TODO Auto-generated constructor stub
@@ -31,12 +31,6 @@ public class ShotgunKogel extends Kogel implements ICollidableWithGameObjects, I
                 world.hoogVerrassingSpawnerTellerOp();
             }
         }
-	}
-	
-	@Override
-	public Sound hitSound(GameObject g) {
-		// TODO Auto-generated method stub
-		return new Sound(world, "src/main/java/nl/han/HazardBattle/media/splats.mp3");
 	}
 
 }

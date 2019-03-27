@@ -5,7 +5,7 @@ import java.util.Random;
 import nl.han.ica.OOPDProcessingEngineHAN.Alarm.Alarm;
 import nl.han.ica.OOPDProcessingEngineHAN.Alarm.IAlarmListener;
 
-public class SoldatenSpawner extends SpawnerVariable implements IAlarmListener {
+public class ObjectenSpawner extends SpawnerVariable implements IAlarmListener {
 	
 	private float soldatenPerSeconden; 
 	private int min, max; 
@@ -13,7 +13,7 @@ public class SoldatenSpawner extends SpawnerVariable implements IAlarmListener {
 	private HazardBattle hazardBattle; 
 	AbstractObject s = null;
 	
-	public SoldatenSpawner(HazardBattle world, float objectPerSecond) {
+	public ObjectenSpawner(HazardBattle world, float objectPerSecond) {
 		this.soldatenPerSeconden = setAmount(objectPerSecond); 
 		this.hazardBattle = setWorld(world); 
 		this.random = new Random();

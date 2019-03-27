@@ -5,14 +5,14 @@ import java.util.Random;
 import nl.han.ica.OOPDProcessingEngineHAN.Alarm.Alarm;
 import nl.han.ica.OOPDProcessingEngineHAN.Alarm.IAlarmListener;
 
-public class LevensDrankjeSpawner extends SpawnerVariable implements IAlarmListener {
+public class ItemSpawner extends SpawnerVariable implements IAlarmListener {
 	
 	private float amount; 
 	private HazardBattle world; 
 	private Random random = new Random(); 
 	private Random nextRandom = new Random();
 	
-	public LevensDrankjeSpawner(HazardBattle hazardBattle, float drankjePerseconden) {
+	public ItemSpawner(HazardBattle hazardBattle, float drankjePerseconden) {
 		this.amount = setAmount(drankjePerseconden);
 		this.world = setWorld(hazardBattle);
 		alarmObject(); 

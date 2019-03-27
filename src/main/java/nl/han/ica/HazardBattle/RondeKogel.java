@@ -7,12 +7,12 @@ import nl.han.ica.OOPDProcessingEngineHAN.Objects.GameObject;
 import nl.han.ica.OOPDProcessingEngineHAN.Objects.Sprite;
 import nl.han.ica.OOPDProcessingEngineHAN.Sound.Sound;
 
-public class RondeKogel extends Kogel implements ICollidableWithGameObjects, ISpeelGeluid {
+public class RondeKogel extends Kogel implements ICollidableWithGameObjects {
 
 	private HazardBattle world;
 
 	public RondeKogel(HazardBattle world) {
-		super(new Sprite("src/main/java/nl/han/ica/HazardBattle/media/Nieuwe map/RoundBullet.png"));
+		super(new Sprite("src/main/java/nl/han/ica/HazardBattle/media/Nieuwe map/RoundBullet.png"), world);
 		this.world = world;
 		setxSpeed(-2f);
 		// TODO Auto-generated constructor stub
@@ -32,11 +32,4 @@ public class RondeKogel extends Kogel implements ICollidableWithGameObjects, ISp
             }
         }
 	}
-
-	@Override
-	public Sound hitSound(GameObject g) {
-		// TODO Auto-generated method stub
-		return new Sound(world, "src/main/java/nl/han/ica/HazardBattle/media/splats.mp3");
-	}
-
 }

@@ -18,10 +18,11 @@ public class Schip extends AbstractObject {
 		// TODO Auto-generated constructor stub
 	}
 
+
 	@Override
 	public void mousePressed(int x, int y, int button) {
 		// TODO Auto-generated method stub
-
+			
 	}
 
 	@Override
@@ -48,5 +49,6 @@ public class Schip extends AbstractObject {
 			world.exit();
 		}
 	}
+
 
 }

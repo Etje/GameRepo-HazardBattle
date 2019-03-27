@@ -4,10 +4,9 @@ import nl.han.ica.OOPDProcessingEngineHAN.Objects.GameObject;
 import nl.han.ica.OOPDProcessingEngineHAN.Objects.Sprite;
 import nl.han.ica.OOPDProcessingEngineHAN.Sound.Sound;
 
-public class PaintballGeweer extends Wapens {
+public class PaintballGeweer extends Wapen {
 
 	private HazardBattle world; 
-	private Kogel k;
 
 	public PaintballGeweer(HazardBattle hazardBattle) {
 		super(new Sprite("src/main/java/nl/han/ica/HazardBattle/media/Nieuwe map/paintballGun.png"), hazardBattle);
@@ -35,7 +34,7 @@ public class PaintballGeweer extends Wapens {
         	if(world.kogels != 0) {
         		playGunSounds(this).rewind();
         		playGunSounds(this).play();
-        		k = new ShotgunKogel(world);
+        		Kogel k = new ShotgunKogel(world);
 	        	world.addGameObject(k, (float) getX(), (float) getY());
 	        	world.verminderKogels();
         	} else {

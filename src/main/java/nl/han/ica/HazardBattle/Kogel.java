@@ -9,7 +9,7 @@ public abstract class Kogel extends AnimatedSpriteObject implements ISpeelGeluid
 	
 	private HazardBattle world;
 
-	public Kogel(Sprite sprite) {
+	public Kogel(Sprite sprite, HazardBattle world) {
 		super(sprite, 1);
 		this.world = world;
 		setxSpeed(-2f);
@@ -23,7 +23,7 @@ public abstract class Kogel extends AnimatedSpriteObject implements ISpeelGeluid
 	}
 
 	@Override
-	public Sound playGunSounds(Wapens w) {
+	public Sound playGunSounds(Wapen w) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -43,6 +43,7 @@ public abstract class Kogel extends AnimatedSpriteObject implements ISpeelGeluid
 	@Override
 	public Sound hitSound(GameObject g) {
 		// TODO Auto-generated method stub
+		System.out.println(g);
 		Sound sound = null; 
 		
 		if(g instanceof Soldaat) {
@@ -50,7 +51,7 @@ public abstract class Kogel extends AnimatedSpriteObject implements ISpeelGeluid
 		} else if(g instanceof Schip) {
 			sound = new Sound(world, "src/main/java/nl/han/ica/HazardBattle/media/gunshot.mp3");
 		} else if(g instanceof Geest) {
-			sound = new Sound(world, "src/main/java/nl/han/ica/HazardBattle/media/reload-sound.mp3");
+			sound = new Sound(world, "src/main/java/nl/han/ica/HazardBattle/media/automatic.mp3");
 		}
 		
 		return sound;

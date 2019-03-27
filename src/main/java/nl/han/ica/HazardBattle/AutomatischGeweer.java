@@ -4,10 +4,9 @@ import nl.han.ica.OOPDProcessingEngineHAN.Objects.GameObject;
 import nl.han.ica.OOPDProcessingEngineHAN.Objects.Sprite;
 import nl.han.ica.OOPDProcessingEngineHAN.Sound.Sound;
 
-public class AutomatischGeweer extends Wapens {
+public class AutomatischGeweer extends Wapen {
 
 	private HazardBattle world;
-	private Kogel k;
 
 	public AutomatischGeweer(HazardBattle world) {
 		super(new Sprite("src/main/java/nl/han/ica/HazardBattle/media/Nieuwe map/automaticGun.png"), world);
@@ -35,7 +34,7 @@ public class AutomatischGeweer extends Wapens {
         	if(world.kogels != 0) {
         		this.playGunSounds(this).rewind();
         		this.playGunSounds(this).play();
-        		k = new RondeKogel(world);
+        		Kogel k = new RondeKogel(world);
 	        	world.addGameObject(k, (float) getX(), (float) getY());
 	        	world.verminderKogels();
         	} else {

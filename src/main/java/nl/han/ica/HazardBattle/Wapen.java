@@ -8,12 +8,12 @@ import nl.han.ica.OOPDProcessingEngineHAN.Objects.GameObject;
 import nl.han.ica.OOPDProcessingEngineHAN.Objects.Sprite;
 import nl.han.ica.OOPDProcessingEngineHAN.Sound.Sound;
 
-public abstract class Wapens extends AnimatedSpriteObject implements ISpeelGeluid {
+public abstract class Wapen extends AnimatedSpriteObject implements ISpeelGeluid {
 	
 	private HazardBattle world;
 	private int size = 25;
 
-	public Wapens(Sprite sprite, HazardBattle world) {
+	public Wapen(Sprite sprite, HazardBattle world) {
 		super(sprite, 1);
         setCurrentFrameIndex(0);
         setFriction(0.1f);
@@ -61,7 +61,7 @@ public abstract class Wapens extends AnimatedSpriteObject implements ISpeelGelui
 	} 
 
 	@Override
-	public Sound playGunSounds(Wapens w) {
+	public Sound playGunSounds(Wapen w) {
 		// TODO Auto-generated method stub
 		Sound playSound = null;
 		

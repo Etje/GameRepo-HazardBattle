@@ -4,10 +4,9 @@ import nl.han.ica.OOPDProcessingEngineHAN.Objects.GameObject;
 import nl.han.ica.OOPDProcessingEngineHAN.Objects.Sprite;
 import nl.han.ica.OOPDProcessingEngineHAN.Sound.Sound;
 
-public class HandGeweer extends Wapens implements ISpeelGeluid {
+public class HandGeweer extends Wapen {
 
-	private HazardBattle world; 
-	private Kogel k;
+	private HazardBattle world;
 	
 	public HandGeweer(HazardBattle hazardBattle) {
 		super(new Sprite("src/main/java/nl/han/ica/HazardBattle/media/Nieuwe map/handGun.png"), hazardBattle);
@@ -35,7 +34,7 @@ public class HandGeweer extends Wapens implements ISpeelGeluid {
         	if(world.kogels != 0) {
         		this.playGunSounds(this).rewind();
         		this.playGunSounds(this).play();
-        		k = new GeleKogel(world);
+        		Kogel k = new GeleKogel(world);
 	        	world.addGameObject(k, (float) getX(), (float) getY());
 	        	world.verminderKogels();
         	} else {

@@ -8,12 +8,12 @@ import nl.han.ica.OOPDProcessingEngineHAN.Objects.GameObject;
 import nl.han.ica.OOPDProcessingEngineHAN.Objects.Sprite;
 import nl.han.ica.OOPDProcessingEngineHAN.Sound.Sound;
 
-public class GeleKogel extends Kogel implements ICollidableWithGameObjects, ISpeelGeluid {
+public class GeleKogel extends Kogel implements ICollidableWithGameObjects {
 
 	private HazardBattle world; 
 	
 	public GeleKogel(HazardBattle world) {
-		super(new Sprite("src/main/java/nl/han/ica/HazardBattle/media/Nieuwe map/yellowBullet.png"));
+		super(new Sprite("src/main/java/nl/han/ica/HazardBattle/media/Nieuwe map/yellowBullet.png"), world);
 		this.world = world;
 		setxSpeed(-2f);
 		// TODO Auto-generated constructor stub
@@ -24,6 +24,7 @@ public class GeleKogel extends Kogel implements ICollidableWithGameObjects, ISpe
 		// TODO Auto-generated method stub
         for (GameObject g:collidedGameObjects) {
             if (g instanceof AbstractObject) {
+            	System.out.println(g);
             	hitSound(g).rewind();
             	hitSound(g).play();
                 world.deleteGameObject(g);
@@ -32,29 +33,5 @@ public class GeleKogel extends Kogel implements ICollidableWithGameObjects, ISpe
                 world.hoogVerrassingSpawnerTellerOp();
             }
         }
-	}
-
-	@Override
-	public Sound hitSound(GameObject g) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Sound emptyGunSound() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Sound reloadSound() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Sound playGunSounds(Wapens w) {
-		// TODO Auto-generated method stub
-		return null;
 	}
 }
