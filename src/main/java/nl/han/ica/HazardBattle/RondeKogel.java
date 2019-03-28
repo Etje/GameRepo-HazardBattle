@@ -13,8 +13,8 @@ public class RondeKogel extends Kogel {
 
 	public RondeKogel(HazardBattle world) {
 		super(new Sprite("src/main/java/nl/han/ica/HazardBattle/media/Nieuwe map/RoundBullet.png"), world);
-		this.world = world;
-		setxSpeed(-2f);
+		setWorld(world);
+		setxSpeed(-3f);
 		// TODO Auto-generated constructor stub
 	}
 	

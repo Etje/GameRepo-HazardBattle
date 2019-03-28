@@ -14,8 +14,8 @@ public class GeleKogel extends Kogel {
 	
 	public GeleKogel(HazardBattle world) {
 		super(new Sprite("src/main/java/nl/han/ica/HazardBattle/media/Nieuwe map/yellowBullet.png"), world);
-		this.world = world;
-		setxSpeed(-2f);
+		setWorld(world);
+		setxSpeed(-4f);
 		// TODO Auto-generated constructor stub
 	}
 	

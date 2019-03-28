@@ -13,7 +13,7 @@ public class ShotgunKogel extends Kogel {
 
 	public ShotgunKogel(HazardBattle world) {
 		super(new Sprite("src/main/java/nl/han/ica/HazardBattle/media/Nieuwe map/shotgunBullet.png"), world);
-		this.world = world; 
+		setWorld(world);
 		setxSpeed(-2f);
 		// TODO Auto-generated constructor stub
 	}

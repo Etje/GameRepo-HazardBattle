@@ -46,7 +46,7 @@ public class HazardBattle extends GameEngine {
 	private void maakSpeler() {
 		// TODO Auto-generated method stub
 
-	    Wapen p = new PaintballGeweer(this); 
+	    Wapen p = new HandGeweer(this); 
         addGameObject(p, gameBreedte / 1.35f, 0 + p.getHeight());
 	}
 	

@@ -61,17 +61,24 @@ public abstract class Kogel extends AnimatedSpriteObject implements ISpeelGeluid
 	@Override
 	public Sound hitSound(GameObject g) {
 		// TODO Auto-generated method stub
-		System.out.println(g);
 		Sound sound = null; 
 		
 		if(g instanceof Soldaat) {
 			sound = new Sound(world, "src/main/java/nl/han/ica/HazardBattle/media/splats.mp3");
 		} else if(g instanceof Schip) {
-			sound = new Sound(world, "src/main/java/nl/han/ica/HazardBattle/media/gunshot.mp3");
+			sound = new Sound(world, "src/main/java/nl/han/ica/HazardBattle/media/splash_4.wav");
 		} else if(g instanceof Geest) {
-			sound = new Sound(world, "src/main/java/nl/han/ica/HazardBattle/media/automatic.mp3");
+			sound = new Sound(world, "src/main/java/nl/han/ica/HazardBattle/media/splash_3.wav");
 		}
 		
 		return sound;
+	}
+
+	public HazardBattle getWorld() {
+		return world;
+	}
+
+	public void setWorld(HazardBattle world) {
+		this.world = world;
 	}
 }
