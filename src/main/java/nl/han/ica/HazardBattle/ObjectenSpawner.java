@@ -43,7 +43,6 @@ public class ObjectenSpawner extends SpawnerVariable implements IAlarmListener {
 
 	@Override
 	public void alarmObject() {
-		System.out.println("effe debuggen");
         Alarm alarm = new Alarm("Nieuwe object",1/setAmount(soldatenPerSeconden));
         alarm.addTarget((IAlarmListener) this);
         alarm.start();

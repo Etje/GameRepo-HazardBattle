@@ -32,8 +32,8 @@ public class AutomatischGeweer extends Wapen {
         }
         if(keyCode == ' ') {
         	if(world.kogels != 0) {
-        		this.playGunSounds(this).rewind();
-        		this.playGunSounds(this).play();
+        		playGunSounds(this).rewind();
+        		playGunSounds(this).play();
         		Kogel k = new RondeKogel(world);
 	        	world.addGameObject(k, (float) getX(), (float) getY());
 	        	world.verminderKogels();

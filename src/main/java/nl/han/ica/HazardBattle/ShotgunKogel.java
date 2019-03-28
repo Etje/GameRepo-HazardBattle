@@ -7,7 +7,7 @@ import nl.han.ica.OOPDProcessingEngineHAN.Objects.GameObject;
 import nl.han.ica.OOPDProcessingEngineHAN.Objects.Sprite;
 import nl.han.ica.OOPDProcessingEngineHAN.Sound.Sound;
 
-public class ShotgunKogel extends Kogel implements ICollidableWithGameObjects {
+public class ShotgunKogel extends Kogel {
 
 	private HazardBattle world;
 
@@ -18,19 +18,4 @@ public class ShotgunKogel extends Kogel implements ICollidableWithGameObjects {
 		// TODO Auto-generated constructor stub
 	}
 	
-	@Override
-	public void gameObjectCollisionOccurred(List<GameObject> collidedGameObjects) {
-		// TODO Auto-generated method stub
-        for (GameObject g:collidedGameObjects) {
-            if (g instanceof AbstractObject) {
-            	hitSound(g).rewind();
-            	hitSound(g).play();
-                world.deleteGameObject(g);
-                world.deleteGameObject(this);
-                world.hoogGedodeSoldatenOp();
-                world.hoogVerrassingSpawnerTellerOp();
-            }
-        }
-	}
-
 }

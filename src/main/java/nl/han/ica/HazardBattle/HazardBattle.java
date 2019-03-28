@@ -19,9 +19,6 @@ public class HazardBattle extends GameEngine {
 	private int soldatenGedood, verrassingsSpawnerteller, levens;
 	public int kogels;
     public int gameHoogte, gameBreedte;
-    // bij onderstaand variable kunt u kiezen uit 'paintball geweer', 'automatisch geweer', en 'hand geweer'
-    private int typeWapen = 2; 
-    private Wapen p; 
     
 	public static void main(String[] args) {
 		HazardBattle b = new HazardBattle();
@@ -41,24 +38,15 @@ public class HazardBattle extends GameEngine {
     	objectsMap();
 		maakAchtergrond(gameBreedte, gameHoogte); 
 		tekenTextEnDashboard(gameBreedte, gameHoogte);
-		dataBestand();	
+		dataBestand();
+		ververs();
 		
 	} 
 	
 	private void maakSpeler() {
 		// TODO Auto-generated method stub
-		
-    	switch(typeWapen) {
-	    	case 0: 
-	    		p = new HandGeweer(this);
-	    		break; 
-	    	case 1: 
-	    		p = new AutomatischGeweer(this);
-	    		break; 
-	    	case 2: 
-	    		p = new PaintballGeweer(this);
-    	}
-    	
+
+	    Wapen p = new PaintballGeweer(this); 
         addGameObject(p, gameBreedte / 1.35f, 0 + p.getHeight());
 	}
 	
