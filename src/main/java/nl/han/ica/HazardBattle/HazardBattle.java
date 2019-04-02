@@ -9,9 +9,12 @@ import nl.han.ica.OOPDProcessingEngineHAN.Tile.TileMap;
 import nl.han.ica.OOPDProcessingEngineHAN.Tile.TileType;
 import nl.han.ica.OOPDProcessingEngineHAN.View.View;
 
+
+//hoofdklasse van het spel, erft van GameEngine (klasse uit aangeleverde game engine)
 @SuppressWarnings("serial")
 public class HazardBattle extends GameEngine {
 
+	//variables, die gelden binnen de klasse
 	private IPersistence persistence;
 	private ObjectenSpawner objects;
 	private ItemSpawner verrassingen;
@@ -20,11 +23,13 @@ public class HazardBattle extends GameEngine {
 	public int kogels;
     public int gameHoogte, gameBreedte;
     
+    //functie die het spel uiteindelijk uitvoerd
 	public static void main(String[] args) {
 		HazardBattle b = new HazardBattle();
         b.runSketch();
 	}
 
+	//setup gegevens van het spel
 	@Override
 	public void setupGame() {
 		// TODO Auto-generated method stub
@@ -43,13 +48,16 @@ public class HazardBattle extends GameEngine {
 		
 	} 
 	
+	//speler word aangemaakt
 	private void maakSpeler() {
 		// TODO Auto-generated method stub
-
-	    Wapen p = new HandGeweer(this); 
+		//Keuze uit een HandGeweer, PaintballGeweer en AutomatischGeweer. 
+		//alle 3 krijgen de parameter 'this' mee
+	    Wapen p = new PaintballGeweer(this); 
         addGameObject(p, gameBreedte / 1.35f, 0 + p.getHeight());
 	}
 	
+	//het aantal soldate die je gedood hebt word weggeschreven in een bestand
 	private void dataBestand() {
 		// TODO Auto-generated method stub
         persistence = new FilePersistence("src/main/java/nl/han/ica/HazardBattle/media/soldierKilled.txt");
@@ -59,6 +67,7 @@ public class HazardBattle extends GameEngine {
         }
 	}
 
+	//dashboard, met bijbehorende text objecten worden aangemaakt
 	private void tekenTextEnDashboard(int gameBreedte, int gameHoogte) {
 		// TODO Auto-generated method stub
     	zetLevens();
@@ -75,16 +84,19 @@ public class HazardBattle extends GameEngine {
         maakAchtergrond(gameBreedte, gameHoogte); 
 	}
 
+	//het aantal levens, wat de speler heeft, word bij aanroep van onderstaande functie op 10 gezet. 
 	public int zetLevens() {
 		// TODO Auto-generated method stub
 		return this.levens = 10;
 	}
 
+	//het aantal kogels word bij aanroep van deze functie op 5 gezet.
 	public int zetKogel() {
 		// TODO Auto-generated method stub
 		return this.kogels = 5;
 	}
 
+	//de achtergrond van het spel word gemaakt
 	private void maakAchtergrond(int gameBreedte, int gameHoogte) {
 		// TODO Auto-generated method stub
         View view = new View(gameBreedte,gameHoogte);
@@ -94,6 +106,7 @@ public class HazardBattle extends GameEngine {
         size(gameBreedte, gameHoogte);
 	}
 
+	//de map met objecten word gemaakt
 	private void objectsMap() {
 		// TODO Auto-generated method stub
         Sprite treeSprite = new Sprite("src/main/java/nl/han/ica/HazardBattle/media/tree.png");	
@@ -127,11 +140,13 @@ public class HazardBattle extends GameEngine {
         tileMap = new TileMap(tileSize, tileTypes, tilesMap);
 	}
 
+	//de spawner die de levensdrankjes en munitie maakt word aangemaakt.
 	private void itemSpawner() {
 		// TODO Auto-generated method stub
 		verrassingen = new ItemSpawner(this, (float) 0.25);
 	}
 
+	//spawner die de vijanden, welke over het scherm lopen, word aangemaakt
 	private void soldatenSpawner() {
 		// TODO Auto-generated method stub
 		objects = new ObjectenSpawner(this, (float) 0.5);
@@ -143,6 +158,7 @@ public class HazardBattle extends GameEngine {
 		
 	}
 
+	//wanneer een soldaat omver geschoten word, wordt deze methode aangeroepen en word de variabel 'soldatenGedood' opgehoogd, en weggeschreven in een bestand.
 	public void hoogGedodeSoldatenOp() {
 		// TODO Auto-generated method stub
 		soldatenGedood++;
@@ -150,26 +166,31 @@ public class HazardBattle extends GameEngine {
 		ververs();
 	}
 
+	//de teller voor de verrassingen wordt opgehoogt 
 	public int hoogVerrassingSpawnerTellerOp() {
 		// TODO Auto-generated method stub
 		return verrassingsSpawnerteller++;
 	}
 
+	//het aantal kogels word met 1 verminderd
 	public void verminderKogels() {
 		// TODO Auto-generated method stub
 		this.kogels--;
 		ververs();
 	}
 	
+	//het aantal levens word met 1 verminderd
 	public void verminderLevens(int i) {
 		this.levens -= i; 
 		ververs();
 	}
 	
+	//het aantal levens word opgehaald
 	public int haalLevensOp() {
 		return levens; 
 	}
 
+	//de text objecten worden ververst
 	public void ververs() {
 		// TODO Auto-generated method stub
     	kogelText.setText("Je hebt nog " + kogels + " kogels", gameBreedte / 11, 15);
