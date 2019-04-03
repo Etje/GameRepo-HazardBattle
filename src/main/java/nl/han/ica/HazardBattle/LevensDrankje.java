@@ -7,6 +7,8 @@ import nl.han.ica.HazardBattle.AbstractObject;
 import nl.han.ica.OOPDProcessingEngineHAN.Collision.CollidedTile;
 import nl.han.ica.OOPDProcessingEngineHAN.Objects.Sprite;
 
+//Klasse LevensDrankje, welke erft van AbstractObject. 
+
 public class LevensDrankje extends AbstractObject {
 
 	private HazardBattle world; 
@@ -14,7 +16,6 @@ public class LevensDrankje extends AbstractObject {
 	boolean yAs; 
 	
 	public LevensDrankje(HazardBattle world) {
-		// TODO Auto-generated constructor stub
 		super(new Sprite("src/main/java/nl/han/ica/HazardBattle/media/potion.png"));
 		this.world = world;
 	}
@@ -33,12 +34,11 @@ public class LevensDrankje extends AbstractObject {
 
 	@Override
 	public void update() {
-		// TODO Auto-generated method stub
+		
 	}
 
 	@Override
 	public void tileCollisionOccurred(List<CollidedTile> collidedTiles) {
-		// TODO Auto-generated method stub
 		
 	}
 

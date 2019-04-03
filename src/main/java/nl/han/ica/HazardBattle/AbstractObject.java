@@ -8,6 +8,7 @@ import nl.han.ica.OOPDProcessingEngineHAN.Objects.Sprite;
 import processing.core.PGraphics;
 import processing.core.PImage;
 
+//zelf gemaakte abstracte klasse, welke erft van de klasse GameObject. 
 public abstract class AbstractObject extends GameObject  {
 
 	private Sprite sprite;

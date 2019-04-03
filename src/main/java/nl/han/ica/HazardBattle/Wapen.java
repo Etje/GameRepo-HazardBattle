@@ -8,6 +8,8 @@ import nl.han.ica.OOPDProcessingEngineHAN.Objects.GameObject;
 import nl.han.ica.OOPDProcessingEngineHAN.Objects.Sprite;
 import nl.han.ica.OOPDProcessingEngineHAN.Sound.Sound;
 
+//abstracte klasse Wapen, welke de methodes en implementatie bevat voor de beschikbare Wapens. 
+//Deze klasse erft van AnimatedSpriteObject, en implementeerd de ISpeelgeluid interface
 public abstract class Wapen extends AnimatedSpriteObject implements ISpeelGeluid {
 	
 	private HazardBattle world;
@@ -22,7 +24,7 @@ public abstract class Wapen extends AnimatedSpriteObject implements ISpeelGeluid
 	
 	@Override
 	public void update() {
-		// TODO Auto-generated method stub
+		
         if (getX()<=0) {
             setxSpeed(0);
             setX(0);
@@ -50,19 +52,16 @@ public abstract class Wapen extends AnimatedSpriteObject implements ISpeelGeluid
 	
 	@Override
 	public Sound reloadSound() {
-		// TODO Auto-generated method stub
 		return new Sound(world, "src/main/java/nl/han/ica/HazardBattle/media/reload-sound.mp3");
 	}
 
 	@Override
 	public Sound emptyGunSound() {
-		// TODO Auto-generated method stub
 		return new Sound(world, "src/main/java/nl/han/ica/HazardBattle/media/empty-gun-sound.wav");
 	} 
 
 	@Override
 	public Sound playGunSounds(Wapen w) {
-		// TODO Auto-generated method stub
 		Sound playSound = null;
 		
 		if(w instanceof AutomatischGeweer) {

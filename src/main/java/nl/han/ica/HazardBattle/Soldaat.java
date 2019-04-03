@@ -7,6 +7,9 @@ import nl.han.ica.OOPDProcessingEngineHAN.Collision.CollidedTile;
 import nl.han.ica.OOPDProcessingEngineHAN.Objects.Sprite;
 import processing.core.PVector;
 
+//subklasse Soldaat, welke erft van de zelfgemaakte AbstractObject klasse. 
+//Deze klasse is 1 van de 3 vijand klasse, en heeft dus een andere implementatie dan de andere 2 klasses
+
 public class Soldaat extends AbstractObject {
 
 	private HazardBattle world;
@@ -15,18 +18,15 @@ public class Soldaat extends AbstractObject {
 		super(new Sprite("src/main/java/nl/han/ica/HazardBattle/media/spartan-soldier.png"));
 		this.world = world;
 		setxSpeed(2.5f);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
 	public void mousePressed(int x, int y, int button) {
-		// TODO Auto-generated method stub
 
 	}
 
 	@Override
 	public void tileCollisionOccurred(List<CollidedTile> collidedTiles) {
-		// TODO Auto-generated method stub
 		PVector vector; 
 		
         for (CollidedTile ct : collidedTiles) {
@@ -40,7 +40,6 @@ public class Soldaat extends AbstractObject {
 
 	@Override
 	public void update() {
-		// TODO Auto-generated method stub
 		if(getX() == world.gameBreedte) {
 			world.verminderLevens(3);
 			world.deleteGameObject(this);		

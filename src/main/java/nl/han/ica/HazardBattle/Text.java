@@ -4,6 +4,8 @@ import nl.han.ica.OOPDProcessingEngineHAN.Objects.GameObject;
 import processing.core.PConstants;
 import processing.core.PGraphics;
 
+//Text klasse, welke erft van GameObject. 
+//Deze klasse zorgt voor het tekenen van de textObjecten. 
 public class Text extends GameObject {
 	
     private String text;
@@ -21,13 +23,11 @@ public class Text extends GameObject {
     
 	@Override
 	public void update() {
-		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
 	public void draw(PGraphics g) {
-		// TODO Auto-generated method stub
 		
         g.textAlign(PConstants.CENTER);
         g.textSize(15);

@@ -8,6 +8,8 @@ import nl.han.ica.OOPDProcessingEngineHAN.Objects.GameObject;
 import nl.han.ica.OOPDProcessingEngineHAN.Objects.Sprite;
 import nl.han.ica.OOPDProcessingEngineHAN.Sound.Sound;
 
+//Abstracte klasse Kogel, welke alle implementatie bevat voor de kogels. 
+//Deze klasse implementeerd ISpeelGeluid en ICollidableWithGameObjects.
 public abstract class Kogel extends AnimatedSpriteObject implements ISpeelGeluid, ICollidableWithGameObjects {
 	
 	private HazardBattle world;
@@ -16,12 +18,10 @@ public abstract class Kogel extends AnimatedSpriteObject implements ISpeelGeluid
 		super(sprite, 1);
 		this.world = world;
 		setxSpeed(-2f);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
 	public void gameObjectCollisionOccurred(List<GameObject> collidedGameObjects) {
-		// TODO Auto-generated method stub
         for (GameObject g:collidedGameObjects) {
             if (g instanceof AbstractObject) {
             	hitSound(g).rewind();
@@ -36,31 +36,26 @@ public abstract class Kogel extends AnimatedSpriteObject implements ISpeelGeluid
 
 	@Override
 	public void update() {
-		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
 	public Sound playGunSounds(Wapen w) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public Sound emptyGunSound() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public Sound reloadSound() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public Sound hitSound(GameObject g) {
-		// TODO Auto-generated method stub
 		Sound sound = null; 
 		
 		if(g instanceof Soldaat) {
@@ -69,6 +64,10 @@ public abstract class Kogel extends AnimatedSpriteObject implements ISpeelGeluid
 			sound = new Sound(world, "src/main/java/nl/han/ica/HazardBattle/media/splash_4.wav");
 		} else if(g instanceof Geest) {
 			sound = new Sound(world, "src/main/java/nl/han/ica/HazardBattle/media/splash_3.wav");
+		} else if(g instanceof Munitie) {
+			sound = new Sound(world, "src/main/java/nl/han/ica/HazardBattle/media/fade.mp3");
+		} else if(g instanceof LevensDrankje) {
+			sound = new Sound(world, "src/main/java/nl/han/ica/HazardBattle/media/fade.mp3");		
 		}
 		
 		return sound;

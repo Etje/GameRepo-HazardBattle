@@ -5,6 +5,9 @@ import java.util.Random;
 import nl.han.ica.OOPDProcessingEngineHAN.Alarm.Alarm;
 import nl.han.ica.OOPDProcessingEngineHAN.Alarm.IAlarmListener;
 
+//klasse ObjectenSpawner, welke zorgt voor het steeds tevoorschijn komen van nieuwe vijanden. 
+//Welke van de 3 vijanden dat zijn word random bepaald. 
+//Tevens erft deze klasse van SpawnerVariable.
 public class ObjectenSpawner extends SpawnerVariable implements IAlarmListener {
 	
 	private float soldatenPerSeconden; 
@@ -23,7 +26,6 @@ public class ObjectenSpawner extends SpawnerVariable implements IAlarmListener {
 	
 	@Override
 	public void triggerAlarm(String alarmName) {
-		// TODO Auto-generated method stub
 		
 		int random = setNextRandom(3);
 		
@@ -50,14 +52,12 @@ public class ObjectenSpawner extends SpawnerVariable implements IAlarmListener {
 
 	@Override
 	public float setAmount(float XAmount) {
-		// TODO Auto-generated method stub
 		this.soldatenPerSeconden = XAmount; 
 		return soldatenPerSeconden;
 	}
 
 	@Override
 	public int setRandom(int x) {
-		// TODO Auto-generated method stub
 		int cijfer = random.nextInt(x);
 		return cijfer;
 	}
@@ -65,14 +65,12 @@ public class ObjectenSpawner extends SpawnerVariable implements IAlarmListener {
 
 	@Override
 	public HazardBattle setWorld(HazardBattle world) {
-		// TODO Auto-generated method stub
 		this.hazardBattle = world;
 		return this.hazardBattle;
 	}
 
 	@Override
 	public int setNextRandom(int y) {
-		// TODO Auto-generated method stub
 		int nextCijfer = soldaatRandomNumber.nextInt(y);
 		return nextCijfer; 
 	}

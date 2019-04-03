@@ -5,6 +5,8 @@ import java.util.Random;
 import nl.han.ica.OOPDProcessingEngineHAN.Alarm.Alarm;
 import nl.han.ica.OOPDProcessingEngineHAN.Alarm.IAlarmListener;
 
+//Klasse ItemSpawner, welke erft van de zelfgemaakte SpawnerVariable klass, en IAlarmListener implementeerd.
+
 public class ItemSpawner extends SpawnerVariable implements IAlarmListener {
 	
 	private float amount; 
@@ -20,7 +22,6 @@ public class ItemSpawner extends SpawnerVariable implements IAlarmListener {
 	
 	@Override
 	public void triggerAlarm(String alarmName) {
-		// TODO Auto-generated method stub
 		
 		if(world.haalVerrassingSpawnertellerOp() >= 5 && world.haalVerrassingSpawnertellerOp() <= 15) {
 			AbstractObject p = new LevensDrankje(world);
@@ -34,7 +35,6 @@ public class ItemSpawner extends SpawnerVariable implements IAlarmListener {
 
 	@Override
 	public void alarmObject() {
-		// TODO Auto-generated method stub
         Alarm alarm = new Alarm("Nieuwe potion",2/setAmount(amount));
         alarm.addTarget(this);
         alarm.start();

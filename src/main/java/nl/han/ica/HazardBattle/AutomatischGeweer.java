@@ -4,6 +4,7 @@ import nl.han.ica.OOPDProcessingEngineHAN.Objects.GameObject;
 import nl.han.ica.OOPDProcessingEngineHAN.Objects.Sprite;
 import nl.han.ica.OOPDProcessingEngineHAN.Sound.Sound;
 
+//Klasse AutomatischGeweer, welke een subklasse is van Wapen.java. 
 public class AutomatischGeweer extends Wapen {
 
 	private HazardBattle world;
@@ -11,12 +12,10 @@ public class AutomatischGeweer extends Wapen {
 	public AutomatischGeweer(HazardBattle world) {
 		super(new Sprite("src/main/java/nl/han/ica/HazardBattle/media/Nieuwe map/automaticGun.png"), world);
 		this.world = world;
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
 	public void keyPressed(int keyCode, char key) {
-		// TODO Auto-generated method stub
         final int speed = 5;
         if (keyCode == world.UP) {
             setDirectionSpeed(0, speed);

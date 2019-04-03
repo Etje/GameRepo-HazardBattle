@@ -7,6 +7,8 @@ import nl.han.ica.OOPDProcessingEngineHAN.Objects.GameObject;
 import nl.han.ica.OOPDProcessingEngineHAN.Objects.Sprite;
 import nl.han.ica.OOPDProcessingEngineHAN.Sound.Sound;
 
+//Subklasse ShotgunKogel, welke erft van z'n hoofdklasse Kogel 
+
 public class ShotgunKogel extends Kogel {
 
 	private HazardBattle world;
@@ -15,7 +17,6 @@ public class ShotgunKogel extends Kogel {
 		super(new Sprite("src/main/java/nl/han/ica/HazardBattle/media/Nieuwe map/shotgunBullet.png"), world);
 		setWorld(world);
 		setxSpeed(-2f);
-		// TODO Auto-generated constructor stub
 	}
 	
 }

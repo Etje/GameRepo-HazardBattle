@@ -8,6 +8,7 @@ import nl.han.ica.HazardBattle.AbstractObject;
 import nl.han.ica.OOPDProcessingEngineHAN.Collision.CollidedTile;
 import nl.han.ica.OOPDProcessingEngineHAN.Objects.Sprite;
 
+//klasse Munitie, welke erft van AbstractObject. 
 public class Munitie extends AbstractObject {
 
 	private HazardBattle world; 
@@ -18,12 +19,10 @@ public class Munitie extends AbstractObject {
 	public Munitie(HazardBattle world) {
 		super(new Sprite("src/main/java/nl/han/ica/HazardBattle/media/munitions.png"));
 		this.world = world;
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
 	public void update() {
-		// TODO Auto-generated method stub
 		
 	}
 	
@@ -41,7 +40,6 @@ public class Munitie extends AbstractObject {
 
 	@Override
 	public void tileCollisionOccurred(List<CollidedTile> collidedTiles) {
-		// TODO Auto-generated method stub
 		
 	}
 
