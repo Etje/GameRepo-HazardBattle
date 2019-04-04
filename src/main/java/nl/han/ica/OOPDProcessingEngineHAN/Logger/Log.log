@@ -1108,3 +1108,17 @@ FAILURE: java.io.FileNotFoundException: src\src\main\java\nl\han\ica\HazardBattl
 FAILURE: java.io.FileNotFoundException: src\src\main\java\nl\han\ica\HazardBattle\media\soldierKilled.txt (Het systeem kan het opgegeven pad niet vinden)
 [2019-02-03 11:02:51.900] 
 FAILURE: java.io.FileNotFoundException: src\src\main\java\nl\han\ica\HazardBattle\media\soldierKilled.txt (Het systeem kan het opgegeven pad niet vinden)
+[2019-27-04 08:27:05.513] 
+FAILURE: java.io.FileNotFoundException: src\src\main\java\nl\han\ica\HazardBattle\media\soldierKilled.txt (Het systeem kan het opgegeven pad niet vinden)
+[2019-27-04 08:27:10.793] 
+FAILURE: java.io.FileNotFoundException: src\src\main\java\nl\han\ica\HazardBattle\media\soldierKilled.txt (Het systeem kan het opgegeven pad niet vinden)
+[2019-27-04 08:27:12.500] 
+FAILURE: java.io.FileNotFoundException: src\src\main\java\nl\han\ica\HazardBattle\media\soldierKilled.txt (Het systeem kan het opgegeven pad niet vinden)
+[2019-27-04 08:27:13.237] 
+FAILURE: java.io.FileNotFoundException: src\src\main\java\nl\han\ica\HazardBattle\media\soldierKilled.txt (Het systeem kan het opgegeven pad niet vinden)
+[2019-27-04 08:27:18.50] 
+FAILURE: java.io.FileNotFoundException: src\src\main\java\nl\han\ica\HazardBattle\media\soldierKilled.txt (Het systeem kan het opgegeven pad niet vinden)
+[2019-27-04 08:27:21.237] 
+FAILURE: java.io.FileNotFoundException: src\src\main\java\nl\han\ica\HazardBattle\media\soldierKilled.txt (Het systeem kan het opgegeven pad niet vinden)
+[2019-27-04 08:27:23.982] 
+FAILURE: java.io.FileNotFoundException: src\src\main\java\nl\han\ica\HazardBattle\media\soldierKilled.txt (Het systeem kan het opgegeven pad niet vinden)
