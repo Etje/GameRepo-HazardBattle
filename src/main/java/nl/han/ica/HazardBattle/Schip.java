@@ -27,19 +27,6 @@ public class Schip extends AbstractObject {
 	}
 
 	@Override
-	public void tileCollisionOccurred(List<CollidedTile> collidedTiles) {
-		PVector vector; 
-		
-        for (CollidedTile ct : collidedTiles) {
-            
-            if (ct.theTile instanceof LoopbandTile) {
-            	this.setX(getX() + 32);
-            	setxSpeed(1f);
-            }
-        }
-	}
-
-	@Override
 	public void update() {
 		if(getX() == world.gameBreedte) {
 			world.verminderLevens(2);
@@ -48,6 +35,5 @@ public class Schip extends AbstractObject {
 			world.exit();
 		}
 	}
-
 
 }

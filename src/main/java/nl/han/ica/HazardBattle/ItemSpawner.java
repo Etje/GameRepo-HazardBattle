@@ -14,8 +14,8 @@ public class ItemSpawner extends SpawnerVariable implements IAlarmListener {
 	private Random random = new Random(); 
 	private Random nextRandom = new Random();
 	
-	public ItemSpawner(HazardBattle hazardBattle, float drankjePerseconden) {
-		this.amount = setAmount(drankjePerseconden);
+	public ItemSpawner(HazardBattle hazardBattle, float drankjePerSeconden) {
+		this.amount = setAmount(drankjePerSeconden);
 		this.world = setWorld(hazardBattle);
 		alarmObject(); 
 	} 
@@ -23,7 +23,7 @@ public class ItemSpawner extends SpawnerVariable implements IAlarmListener {
 	@Override
 	public void triggerAlarm(String alarmName) {
 		
-		if(world.haalVerrassingSpawnertellerOp() >= 5 && world.haalVerrassingSpawnertellerOp() <= 15) {
+		if(world.haalVerrassingSpawnertellerOp() >= 5 && world.haalVerrassingSpawnertellerOp() <= 20) {
 			AbstractObject p = new LevensDrankje(world);
 	        AbstractObject a = new Munitie(world);  
 	        world.addGameObject(p, setRandom(world.gameBreedte / 2), setRandom(world.gameHoogte / 2));	

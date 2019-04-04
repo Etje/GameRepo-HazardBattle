@@ -26,19 +26,6 @@ public class Soldaat extends AbstractObject {
 	}
 
 	@Override
-	public void tileCollisionOccurred(List<CollidedTile> collidedTiles) {
-		PVector vector; 
-		
-        for (CollidedTile ct : collidedTiles) {
-            
-            if (ct.theTile instanceof LoopbandTile) {
-            	this.setX(getX() - 14);
-            	setxSpeed(0.5f);
-            }
-        }
-	}
-
-	@Override
 	public void update() {
 		if(getX() == world.gameBreedte) {
 			world.verminderLevens(3);
